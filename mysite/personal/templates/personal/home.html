@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="https://getbootstrap.com/favicon.ico">-->
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+
+
+    <!-- Custom styles for this template -->
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/signin.css' %}" type = "text/css"/>
+
+  </head>
+
+  <body class="text-center">
+
+
+     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">Pitzah</a>
+     
+        
+          <ul class="navbar-nav mr-auto">
+           <!-- <li class="nav-item active">
+              <a class="nav-link" href="./products">Products <span class="sr-only">(current)</span></a>
+            </li>-->
+            <li class="nav-item">
+              <a class="nav-link" href="./admin">Seller?Login</a>
+            </li>
+            
+          </ul>
+        
+        
+      </nav>
+    <!-- Login/Signup form -->
+    <form class="form-signin" method="post" action="/login/">
+        {% csrf_token %}
+        
+      <h1 class="h3 mb-3 font-weight-normal">Sign in or Register</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="uname" class="form-control" placeholder="Email address" required="" name="uname" autofocus="">
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Password" name="password" required="">
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="signin" value="Search" >Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="register">Register</button>
+      <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </form>
+   <!--  <form action="/update/" method="post" accept-charset="utf-8">
+        {% csrf_token %}
+        <label for="update_name">Edit Name :</label><br/>
+        <input type="text" name="update_name" id="update_name" placeholder="Enter A Name" />
+        <input type="submit" value="Update"/>
+    </form>
+   -->
+
+</body></html>

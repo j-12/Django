@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>View Cart</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+	</head>
+	<body>
+		<div class="jumbotron">
+  <h1 class="display-4">Welcome to your Cart!</h1>
+  <p class="lead">Products in your cart</p>
+  <p class="lead">
+
+  	<form action="/viewcart/" method="post">
+  	{% csrf_token %}
+    <button class="btn btn-outline-primary btn-lg" href="#" value="clear" name="clear" type="submit">Clear Cart</button>
+	</form>
+  </p>
+  
+  	
+		</div>
+		<ul class="list-group">
+			{% block content %}
+			{% for product in content %}
+				
+					
+					<li class="list-group-item list-group-item-dark"><b>Product: </b>{{product.cart_product_name}}
+					<b>Price: </b>{{product.cart_product_price}}</li>
+					
+			{% endfor %}
+		{% endblock %}
+		</ul>
+	</body>
+</html>

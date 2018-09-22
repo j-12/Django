@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Successful</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+	</head>
+	<body>
+
+			{% block content %}
+			{% for name in content %}
+
+					<div class="jumbotron">
+                                    <h2 class="display-4">{{name}} added to your cart successfully!</h2>
+                                    <a class="btn btn-outline-primary btn-lg" href="/products/" role="button">Go back</a>
+                    </div>
+
+			{% endfor %}
+		{% endblock %}
+
+	</body>
+</html>
